@@ -27,7 +27,10 @@ fi
 for file in $(cat $1); do
   stat"$file" > /dev/null 2> /dev/null
   if [[ $? == 0 ]]; then #Si el fichero existe
-    echo -e ""
+    echo -e "$(realpath $file)\t$(stat -c %U,%G,%a $file)"
+  else
+    echo "Error: No se ha encontrado $file" >&2
   fi
 
 done
+exit 0
