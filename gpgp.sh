@@ -1,6 +1,6 @@
 #! /bin/bash
 # Marc García, Nohemí...
-# Guarda el propietari, grup i permisos dels fitxers que passem
+# Guarda el propietario, grupo i permisos de los archivos que pasamos
 
 if [[ $# -lt 1 ]]; then
   echo "Error: Hay que pasar un fichero por parámetro" >&2
