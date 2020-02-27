@@ -9,15 +9,13 @@ fi
 
 if [[ $1 = "-h" ]]; then
   echo "Uso: ./gpgp.sh NombreFichero"
-  echo "Muestra por pantalla el propietario, grupo y permisos de todos los ficheros
-  o directorios indicados dentro del fichero que pasamos por parametro"
+  echo "Muestra por pantalla el propietario, grupo y permisos de todos los ficheros o directorios indicados dentro del fichero que pasamos por parametro"
   echo -e "Opciones: \n\t -h\t Ayuda para utilizar el script"
-  echo "Necesitaremos los permisos necesarios para poder leer el fichero pasado
-  por parametro"
+  echo "Necesitaremos los permisos necesarios para poder leer el fichero pasado por parametro"
   exit 0
 fi
 
-IFS=$"\n" #Separa fichero por saltos de linea
+IFS=$'\n' #Separa fichero por saltos de linea
 
 if [[ ! -f $1 ]]; then
   echo "El archivo $1 no existe" >&2
@@ -25,9 +23,9 @@ if [[ ! -f $1 ]]; then
 fi
 
 for file in $(cat $1); do
-  stat"$file" > /dev/null 2> /dev/null
+  stat "$file" > /dev/null 2> /dev/null
   if [[ $? == 0 ]]; then #Si el fichero existe
-    echo -e "$(realpath $file)\t$(stat -c %U,%G,%a $file)"
+    echo -e "$(realpath $file) $(stat --format="%U,%G,%a" $file)"
   else
     echo "Error: No se ha encontrado $file" >&2
   fi
