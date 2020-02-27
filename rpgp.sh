@@ -29,9 +29,9 @@ for line in $(cat $1); do
 		before=$(echo -e $(stat --format="%U\t%G\t%a" $file))
 		after=$(cut -f 2-4 -d "	" <<< "$line")
 		echo $(realpath $file)
-		echo -e "Estado actual  : $before"
-		echo -e "Estado anterior: $after"
 		if [ $before != $after ]; then
+      echo -e "Estado actual  : $before"
+  		echo -e "Estado anterior: $after"
 			echo "¿Quieres restaurar las propiedades anteriores? y/n"
 			read -r conf
 			if [ $conf = "y" ]; then
@@ -40,7 +40,8 @@ for line in $(cat $1); do
 				chmod $(cut -f 4 -d $'\t' <<< "$line") $file
 				echo "Se han restablecido las propiedades."
 			fi
-		fi
+		else
+      echo -e "los permisos de $file no se han visto modificados"
 	else
 		echo "ERROR: $file no existe." >&2
 		exit 3
