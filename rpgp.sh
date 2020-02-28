@@ -42,10 +42,15 @@ for line in $(cat $1); do
 			fi
 		else
       echo -e "los permisos de $file no se han visto modificados"
+		fi
 	else
 		echo "ERROR: $file no existe." >&2
 		exit 3
 	fi
-	echo ""
+	echo -e "Los valores finales de los archivos son los siguientes\n"
+done
+for line in $(cat $1); do
+	file=$(cut -f 1 <<< "$line")
+	echo -e "$(realpath $file)\t$(stat --format="%U\t%G\t%a" $file)"
 done
 exit 0
