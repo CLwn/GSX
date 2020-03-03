@@ -8,11 +8,11 @@ if [ $# -lt 1 ]; then
 fi
 
 if [ $1 = "-h" ]; then
-	echo "Uso: ./bfit.sh FICHERO"
-	echo "Vacia un fichero pasado por parametro"
-	echo -e "Opciones:\n\t -h\tAyuda para utilizar el script."
-	echo "Solo necesitamos los permisos necesarios para poder modificar el fichero."
-	exit 0
+	echo "Usage: ./bfit.sh [FILE]"
+	echo "Remove the content from a given file."
+	echo -e "Optional parameters:\n\t -h\tShow help."
+	echo "This requires the permission to modify a given file."
+  exit 0
 fi
 
 if [ -f $1 ]; then
