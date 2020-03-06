@@ -1,0 +1,8 @@
+proj56
+Aquest projecte avalua l'adequació de l'ús de la raspberry pi en l'automatització de la logística en els enviaments dels materials
+39456754D
+98765478H,98765476F,39876787G
+proj57
+Aquest projecte es tracta el blockchain i la mineria de dades
+93193012Z
+39456754D,98765476F,39876787G
