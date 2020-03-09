@@ -18,7 +18,7 @@ fi
 if [ $1 = "-h" ]; then
   echo "Uso: ./altausers.sh Fichero"
   echo "Formato Fichero:
-  DNI:Apellido1 Apellido2:Nombre:Telefono:Departamento"
+  DNI:Apellido1 Apellido2,Nombre:Telefono:Departamento"
   echo "Da de alta a todos los trabajadores que pasamos por parametro"
   echo -e "Opciones:\n\t -h\tAyuda para utilizar el script"
   echo "Necesitamos permisos de root para dar de alta al usuario"

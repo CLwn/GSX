@@ -1,0 +1,9 @@
+Esto se deberá meter en la documentación:
+1.Si ponemos un número bajo de procesos el sistema no podrá ejecutar comandos
+o trabajar con normalidad ya que los recursos estarán todos ocupados temporalmente.
+2.Con el comando ulimit limitamos el numero de procesos que puede ejecutar esa shell
+en caso de cerrar dicha shell o si abrimos una nueva esa limitación desaparece ya que
+solo se aplicaba en la primera shell.
+3.Con el fichero modificamos de manera permanente el límite de procesos en el sistema
+para un usuario o para todos dependiendo de lo que indiquemos. el cambio se aplica
+al reiniciar el sistema.
