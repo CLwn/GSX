@@ -1,9 +1,10 @@
 #! /bin/bash
 # Marc García, Miguel Martínez, Nohemí Tomàs
-#Date: 5 mar 2020
-#Version 0.1
-#Da de alta todos los proyectos pasados por un fichero
+#	Date: 05 mar 2020
+#	Version 0.1
+#	Da de alta todos los proyectos pasados por un fichero
 
+#### 		CODE		####
 if [ "$EUID" -ne 0 ] 2> /dev/null; then #Si no se esta ejecutando como root
   echo "ERROR: Permisos de root son necesarios para ejecutar el script" >&2
   exit 2

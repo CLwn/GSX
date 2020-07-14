@@ -2,8 +2,9 @@
 Description=Shutdown the system Fridays at 22:00
 
 [Timer]
+#Power off in Fridays at 22:00
 OnCalendar=Fri *-*-* 22:00:00
-Persistent=true
+Unit=shutdown.service
 
 [Install]
 WantedBy=timers.target

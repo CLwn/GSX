@@ -1,9 +1,10 @@
 #! /bin/bash
 # Marc García, Miguel Martínez, Nohemí Tomàs
-#Date: 3 mar 2020
-#Version 0.1
-#Da de alta a trabajadores que pasamos por parámetro
+#	Date: 03 mar 2020
+#	Version 0.1
+#	Da de alta a trabajadores que pasamos por parametro
 
+#### 		CODE		####
 if [ "$EUID" -ne 0 ] 2> /dev/null; then #Si no se esta ejecutando como root
   echo "ERROR: Permisos de root son necesarios para ejecutar el script" >&2
   exit 2

@@ -1,0 +1,3 @@
+/home/milax/GSX/utils/carpeta
+/home/milax/GSX/utils/file.txt
+/home/milax/GSX/utils/hola.txt

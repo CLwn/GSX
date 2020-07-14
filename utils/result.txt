@@ -1,0 +1,2 @@
+/home/milax/GSX/utils/carpeta	milax	milax	755
+/home/milax/GSX/utils/file.txt	milax	milax	644

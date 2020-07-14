@@ -1,8 +1,16 @@
-#!/bin/bash
-# Marc Garcia
-# Configura una red con los valores pasados por parametro
+#! /bin/bash
+# Marc García, Miguel Martínez, Nohemí Tomàs
+#	Date: 11 feb 2020
+#	Version 0.1
+# 	Configura una red con los valores pasados por paràmetro
 
-if [ $1 = "-h" ]; then
+#### 		CODE		####
+if [ "$EUID" -ne 0 ] 2> /dev/null; then # Si no se esta ejecutando con permisos de root.
+	echo "ERROR: This script requires root permisses." >&2
+	exit 2
+fi
+
+if [ $1 = "-h" ] 2> /dev/null; then
 	echo "Uso: ./aif.sh [NOMBRE_RED] [ADDRESS] [NETMASK] [NETWORK] [GATEWAY]"
 	echo "Configura una nueva red con los valores pasados por parametro añadiendo la informacion al fichero de /etc/network/interfaces."
 	echo -e "Opciones:\n\t -h\tAyuda para utilizar el script."
@@ -10,16 +18,10 @@ if [ $1 = "-h" ]; then
 	exit 0
 fi
 
-if [ "$EUID" -ne 0 ]; then # Si no se esta ejecutando con permisos de root.
-	echo "ERROR: This script requires root permisses." >&2
-	exit 2
-fi
-
 if [ $# -lt 5 ]; then
 	echo "ERROR: Faltan parametros." >&2
 	exit 1
 fi
-
 
 
 if [[ $2 =~ ^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$ ]]; then

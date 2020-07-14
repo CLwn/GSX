@@ -1,6 +1,0 @@
-[Unit]
-Description=Shutdown the system
-
-[Service]
-User=0
-ExecStart=/bin/bash poweroff

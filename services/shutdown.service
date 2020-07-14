@@ -1,0 +1,11 @@
+[Unit]
+Description=Shutdown the system
+
+[Service]
+User=0
+Type=oneshot
+ExecStart=/sbin/poweroff
+
+
+[Install]
+WantedBy=multi-user.target

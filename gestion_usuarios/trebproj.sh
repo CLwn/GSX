@@ -1,9 +1,10 @@
 #! /bin/bash
 # Marc García, Miguel Martínez, Nohemí Tomàs
-#Date: 6 mar 2020
-#Version 0.1
-#Pone al usuario debajo del directorio del proyecto
+#	Date: 06 mar 2020
+#	Version 0.1
+#	Pone al usuario debajo del directorio del proyecto
 
+#### 		CODE		####
 if [ $# -lt 1 ]; then
   echo "ERROR: Hay que pasar el nombre del proyecto por parámetro" >&2
   exit 1

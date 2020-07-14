@@ -1,0 +1,12 @@
+[Unit]
+Description=Execute backup.sh just before poweroff.
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/true
+ExecStop=/bin/bash /usr/bin/backup.sh
+
+[Install]
+WantedBy=multi-user.target

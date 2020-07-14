@@ -1,7 +1,10 @@
-#! /bin/bash
-# Marc García, Nohemí...
+#!/bin/bash
+# Marc Garcia, Miguel Martínez, Nohemí Tomàs
+#	Date: 11 feb 2020
+#	Version 0.1
 # Guarda el propietario, grupo i permisos de los archivos que pasamos
 
+#### 		CODE		####
 if [[ $# -lt 1 ]]; then
   echo "Error: Hay que pasar un fichero por parámetro" >&2
   exit 1
@@ -26,7 +29,7 @@ for file in $(cat $1); do
   stat "$file" > /dev/null 2> /dev/null
   if [[ $? == 0 ]]; then #Si el fichero existe
     echo -e "$(realpath $file)\t$(stat --format="%U\t%G\t%a" $file)"
-    echo -e "$(realpath $file)\t$(stat --format="%U\t%G\t%a" $file)" >> result.txt 
+    echo -e "$(realpath $file)\t$(stat --format="%U\t%G\t%a" $file)" >> result.txt
   else
     echo "Error: No se ha encontrado $file" >&2
   fi

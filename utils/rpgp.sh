@@ -1,8 +1,12 @@
-#!/bin/bash
-# Marc Garcia
-# Restaura el propietario, grupo y permisos de los ficheros indicados dentro de otro fichero
+#! /bin/bash											
+# Marc García, Miguel Martínez, Nohemí Tomàs
+#	Date: 11 feb 2020
+#	Version 0.1
+# 	Restaura el propietario, grupo y permisos de los
+#	ficheros indicados dentro de otro fichero
 
-if [ "$EUID" -ne 0 ]; then # Si no se esta ejecutando con permisos de root.
+#### 		CODE		####
+if [ "$EUID" -ne 0 ] 2> /dev/null; then # Si no se esta ejecutando con permisos de root.
 	echo "ERROR: Permisos de root son necesarios para ejecutar el script." >&2
 	exit 2
 fi
@@ -12,7 +16,7 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 
-if [ $1 = "-h" ]; then
+if [ $1 = "-h" ] 2> /dev/null; then
 	echo "Uso: ./rpgp.sh FICHERO"
 	echo "Muestra por pantalla el propietario, grupo y permisos actuales y anteriores de todos los ficheros o directorios indicados dentro del fichero que pasamos por parametro y restaura su valor antiguo si el usuario da su permiso."
 	echo -e "Opciones:\n\t -h\tAyuda para utilizar el script."
